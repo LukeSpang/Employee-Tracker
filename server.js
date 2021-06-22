@@ -97,7 +97,7 @@ function addDepartment(){
         .then(function(answer){
             const query = "INSERT INTO department (name) VALUES ( ? )";
             connection.query(query, answer.department, function(err, res){
-                console.log(`You have added: ${(answer.deaprtment).toUpperCase()}.`)
+                console.log(`You have added: ${(answer.department).toUpperCase()}.`)
             })
             viewDepartments();
         })
