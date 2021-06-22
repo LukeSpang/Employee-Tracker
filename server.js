@@ -136,7 +136,7 @@ function addRole(){
         const department = answer.departmentName;
         connection.query('SELECT * FROM DEPARTMENT', function(err, res){
             if(err) throw(err);
-            let filteredDept = res.fileter(function(res){
+            let filteredDept = res.filter(function(res){
                 return res.name == department;
             })
             let id = filteredDept[0].id;
