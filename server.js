@@ -55,12 +55,14 @@ function start() {
 }
 
 function viewDepartments(){
-    const query = "SELECT * FROM department";
+    const query = "SELECT * FROM department ";
         connection.query(query, function(err, res){
             console.log(`DEPARTMENTS:`)
             res.forEach(department => {
-                console.log(`ID: ${department.id} | Name: ${department.name}`)
+                console.log(`ID: ${department.id} | Name: ${department.name}`);
+                
             })
+            console.table(res)
             start();
         });
 };
@@ -72,6 +74,7 @@ function viewRoles(){
             res.forEach(role => {
                 console.log(`ID: ${role.id} | Title: ${role.title} | Salary: ${role.salary} | Department ID: ${role.department_id}`);
             })
+            console.table(res)
             start();
         });
 };
@@ -83,6 +86,7 @@ function viewEmployees(){
             res.forEach(employee => {
                 console.log(`ID: ${employee.id} | Name: ${employee.first_name} ${employee.last_name} | Role ID: ${employee.last_name} | Manager ID: ${employee.manager_id}`);
             })
+            console.table(res)
             start();
         });
 };
